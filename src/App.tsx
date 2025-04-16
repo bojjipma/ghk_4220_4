@@ -46,31 +46,12 @@ export const App = () => {
     <>
       <div className={appSt.container}>
         <img src={alfaOnly} width={158} height={38} className={appSt.img} />
-        <Typography.Text style={{ marginBottom: '1rem' }} view="primary-medium">
-          Перейдите на новый уровень
+        <Typography.Text style={{ marginBottom: '1rem', textAlign:'center' }} view="primary-medium">
+          Переведите деньги <br/>
+          на счета в Альфа-Банк
         </Typography.Text>
 
         <img src={toggle} width={132} height={85} className={appSt.img} />
-
-        <div className={appSt.switcher}>
-          <div
-            className={appSt.switcherBtn({ selected: selected === 'На 1 месяц' })}
-            onClick={() => setSelected('На 1 месяц')}
-          >
-            <Typography.Text view="primary-medium" weight="medium">
-              На 1 месяц
-            </Typography.Text>
-          </div>
-          <div className={appSt.switcherBtn({ selected: selected === 'На 1 год' })} onClick={() => setSelected('На 1 год')}>
-            <Typography.Text view="primary-medium" weight="medium">
-              На 1 год
-            </Typography.Text>
-          </div>
-        </div>
-
-        <Typography.Text view="primary-medium">
-          <b>Сохраните 20%</b> с подпиской на год
-        </Typography.Text>
 
         <div className={appSt.box}>
           <PureCell>
@@ -80,10 +61,10 @@ export const App = () => {
             <PureCell.Content>
               <PureCell.Main>
                 <Typography.Text view="primary-medium" tag="p" defaultMargins={false}>
-                  24 визита в бизнес-залы и рестораны в год
+                  12 визитов в бизнес-залы и рестораны в год
                 </Typography.Text>
                 <Typography.Text view="primary-small" color="secondary">
-                  Не чаще 8 раз в месяц
+                  Не чаще 2 раз в месяц
                 </Typography.Text>
               </PureCell.Main>
             </PureCell.Content>
@@ -95,10 +76,7 @@ export const App = () => {
             <PureCell.Content>
               <PureCell.Main>
                 <Typography.Text view="primary-medium" tag="p" defaultMargins={false}>
-                  12 поездок на такси в год
-                </Typography.Text>
-                <Typography.Text view="primary-small" color="secondary">
-                  Не чаще 2 раз в месяц
+                  2 поездки на такси в год
                 </Typography.Text>
               </PureCell.Main>
             </PureCell.Content>
@@ -125,16 +103,15 @@ export const App = () => {
           view="primary"
           size={72}
           onClick={submit}
-          hint="Подключить"
+          hint={<Typography.Text color="static-secondary-light" view={"primary-medium"}>
+          При остатке на счетах от* 2 млн ₽
+        </Typography.Text>}
         >
-          {selected === 'На 1 месяц' ? (
-            '10 000 ₽ в месяц'
-          ) : (
-            <>
-              <s>120 000 ₽</s> <span style={{ color: '#FFD57B' }}>96 000 ₽ на год</span>
-            </>
-          )}
+          <b>Подключить за 0 ₽ в мес.</b>
         </ButtonMobile>
+        <Typography.Text tag="div" color="tertiary" view="secondary-large" style={{marginTop: '1rem',textAlign:'center', padding: "0 16px"}}>
+          * При остатке от 3 000 000₽ или от 2 000 000₽ и трат по картам от 200 000 ₽ в месяц
+        </Typography.Text>
       </div>
 
       <BottomSheet
