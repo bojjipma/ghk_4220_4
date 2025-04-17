@@ -17,7 +17,6 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [showBs, setShowBs] = useState(false);
   const [thxShow, setThx] = useState(LS.getItem(LSKeys.ShowThx, false));
-  const [selected, _] = useState('На 1 месяц');
 
   useEffect(() => {
     if (!LS.getItem(LSKeys.UserId, null)) {
@@ -28,11 +27,8 @@ export const App = () => {
   const submit = () => {
     setLoading(true);
 
-    sendDataToGA({
-      carousel: '',
-      subscription: selected === 'На 1 месяц' ? 'month' : 'year',
-    }).then(() => {
-      // LS.setItem(LSKeys.ShowThx, true);
+    sendDataToGA(
+    ).then(() => {
       setThx(true);
       setLoading(false);
     });

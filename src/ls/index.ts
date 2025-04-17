@@ -1,6 +1,6 @@
 export const enum LSKeys {
-  ShowThx = 'ab_show_thx_ghk_4888_1',
-  UserId = 'ab_UserId_ghk_4888_1',
+  ShowThx = 'ab_show_thx_ghk_4220_4',
+  UserId = 'ab_UserId_ghk_4220_4',
 }
 
 export interface LSData {
